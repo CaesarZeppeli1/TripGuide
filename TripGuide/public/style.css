@@ -1,0 +1,84 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif; /* Change font family for better readability */
+    background-color: #f0f0f0; /* Light gray background for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #9c3939;
+    text-decoration: underline; /* Change double to underline for clarity */
+    font-style: italic;
+    font-size: 2em; /* Responsive font size */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+label {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #0a0a0a;
+    font-size: 1em; /* Standardize font size */
+    margin-bottom: 5px; /* Space between label and input */
+    display: block; /* Block display for proper spacing */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+    width: calc(100% - 22px); /* Full width inputs, considering padding and borders */
+    padding: 10px; /* Add padding for comfort */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 20px; /* Space between inputs */
+    font-size: 1em; /* Consistent font size */
+    color: rgb(8, 8, 8);
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px; /* Space between input and label */
+}
+
+textarea {
+    resize: none; /* Disable resizing for textarea */
+    height: 100px; /* Fixed height for textarea */
+}
+
+.form {
+    width: 85%;
+    max-width: 600px; /* Limit the form width */
+    background-color: #fff; /* White background for better readability */
+    position: relative; /* Change position to relative for proper centering */
+    margin: 50px auto; /* Center the form with margin */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: left;
+    color: #333; /* Darker text color for better contrast */
+}
+
+#a3 {
+    background-image: url(nanchang1.jpg);
+    background-size: cover; /* Ensure background image covers the entire area */
+    background-position: center; /* Center the background image */
+}
+
+button,
+input[type="reset"] {
+    background-color: #9c3939; /* Primary button color */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for buttons */
+    font-size: 1em; /* Consistent font size */
+    cursor: pointer; /* Pointer cursor for buttons */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+button:hover,
+input[type="reset"]:hover {
+    background-color: #7a2c2c; /* Darker shade on hover */
+}

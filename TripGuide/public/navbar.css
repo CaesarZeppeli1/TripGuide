@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.transparent-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* 透明背景 */
+    backdrop-filter: blur(10px);           /* 模糊效果 */
+    width: 100%;
+}
+
+.transparent-navbar .logo a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.transparent-navbar .nav-links {
+    list-style: none;
+}
+
+.transparent-navbar .nav-links li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.transparent-navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.transparent-navbar .nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+section {
+    
+    text-align: center;
+}
+
+#home {
+    height: 100vh;
+    background: url('https://via.placeholder.com/1200x800') no-repeat center center/cover;
+    color: white;
+}
+
+#about {
+    height: 100vh;
+    background-color: #fff;
+}
+
+
+audio {
+    position: fixed; /* 固定定位 */
+    bottom: 20px; /* 距离底部20px */
+    left: 50%; /* 水平居中 */
+    transform: translateX(-50%); /* 调整为中心位置 */
+    width: 300px; /* 控件宽度 */
+}
+#audio {
+    display: block; /* 初始显示播放器 */
+    opacity: 1; /* 初始不透明 */
+    transition: opacity 0.5s; /* 添加过渡效果 */
+}

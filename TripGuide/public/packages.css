@@ -1,0 +1,126 @@
+
+      
+
+      .heading{
+        text-align: center;
+        padding:2.5rem 0
+      }
+      
+      .heading span{
+        font-size: 2.5rem;
+        background:rgba(255, 165, 0,.2);
+        color:#ffa500;
+        border-radius: .5rem;
+        padding:.2rem 1rem;
+      }
+      
+      .heading span.space{
+        background:none;
+      }
+      
+      section{
+        padding:2rem 9%;
+      }
+
+      /* 预定部分 */
+      .book .row{
+        display: flex;
+        flex-wrap: wrap;
+        gap:1rem;
+        align-items: center;
+      }
+      
+      .book .row .image{
+        flex-grow: 1;
+        flex-basis: 15rem;
+      }
+      
+      .book .row .image img{
+        width:100%;
+      }
+
+      .book .row form{
+        flex-grow: 1;
+        flex-basis: 20rem;
+        padding:.5rem;
+        box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+        border-radius: .5rem;
+      }
+      
+      .book .row form .inputBox{
+        padding:.5rem 0;
+      }
+      
+      .book .row form .inputBox input{
+        width:100%;
+        padding:.5rem;
+        border:.1rem solid rgba(0,0,0,.1);
+        font-size: 1rem;
+        color:#333;
+        text-transform: none;
+      }
+      
+      .book .row form .inputBox h3{
+        font-size: 1rem;
+        padding:.5rem 0;
+        color:#666;
+      }
+      /* 套餐部分 */
+
+      .packages .box-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap:1rem;
+      }
+      
+      .packages .box-container .box{
+        flex:1 1 20rem;
+        border-radius: .5rem;
+        box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+      }
+      
+      .packages .box-container .box img{
+        height: 15rem;
+        width:100%;
+        background-size: contain;
+      }
+      
+      .packages .box-container .box .content{
+        padding:0.5rem;
+      }
+      
+      .packages .box-container .box .content h3{
+        font-size:2rem;
+        color:#333;
+      }
+      
+      .packages .box-container .box .content h3 i{
+        color:#ffa500;
+      }
+      
+      .packages .box-container .box .content p{
+        font-size:1rem;
+        color:#666;
+        padding:0.5rem 0;
+      }
+      
+      .packages .box-container .box .content .stars i{
+        font-size:1.5rem;
+        color:#ffa500;
+      }
+      
+      .packages .box-container .box .content .price{
+        font-size: 1.5rem;
+        color:#333;
+        padding-top: 0.5rem;
+      }
+      
+      .packages .box-container .box .content .price span{
+        color:#666;
+        font-size: 1rem;
+        text-decoration: line-through;
+      }
+
+      
+
+      

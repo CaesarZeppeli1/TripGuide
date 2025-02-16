@@ -1,0 +1,532 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--for mobile view-->
+    <title>TripHome</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="navbar.css"><!--Links an external CSS file to apply styles to the HTML document-->
+    <link rel="stylesheet" href="pictureChange.css">
+    <link rel="stylesheet" href="overLay.css">
+    <link rel="stylesheet" href="overLayHide.js">
+    <link rel="stylesheet" href="packages.css">
+
+
+    
+</head>
+<body>
+    <header>
+        <nav class="transparent-navbar">
+            <div class="logo">
+                <a href="homePage.html">TripHome</a>
+            </div>
+            <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">gallery</a></li>
+            <li><a href="#packages">packages</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        </nav>
+    </header>
+
+
+    
+    <div id="home">
+        <div id="slider">
+        <div id="images">
+            <img src="2.jpg" class="image" alt="Image 1">
+            <img src="1.jpg" class="image" alt="Image 2">
+            <img src="3.jpg" class="image" alt="Image 3">
+            <img src="4.jpg" class="image" alt="Image 4">
+            <img src="5.jpg" class="image" alt="Image 5">
+            <img src="6.jpg" class="image" alt="Image 6">
+            <img src="7.jpg" class="image" alt="Image 7">
+            <img src="8.jpg" class="image" alt="Image 8">
+        </div>
+    </div>
+    </div>
+
+    <div id="app" class="overlay">
+        <h3 @click="showSubtitle = !showSubtitle">旅游是一种信仰</h3>
+        <transition name="fade">
+            <p v-if="showSubtitle">与我们一起，探寻世界尽头</p>
+        </transition>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    
+    <!-- 自定义 JS -->
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                showSubtitle: false
+            }
+        });
+    </script>
+    
+
+    
+
+
+    <script>
+        const images = document.getElementById('images');
+        const totalImages = document.querySelectorAll('.image').length;
+        let index = 0;
+
+        function slide() {
+            index = (index + 1) % totalImages;
+            images.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        setInterval(slide, 3000); // 每3秒切换一次
+    </script>
+
+
+
+
+
+<script>
+    $(document).ready(function(){
+     $("#player").hover(function(){
+         $("#player").slideToggle(5000);
+         });
+     });
+ </script>        
+
+
+
+<div id="audio-container">
+        <audio controls id="audio">
+        <source src="Anticipation - Flame Shapes _ Mapps(1).ogg" type="audio/mpeg">
+    </div>
+    
+    
+    <script>
+        const audio = document.getElementById('audio');
+        const audioContainer = document.getElementById('audio-container');
+        let timer;
+
+        // 显示播放器
+        function showAudio() {
+            audio.style.opacity = '1'; // 变为不透明
+            clearTimeout(timer); // 清除隐藏定时器
+        }
+
+        // 隐藏播放器（变为半透明）
+        function hideAudio() {
+            timer = setTimeout(() => {
+                audio.style.opacity = '0.05'; // 设置为半透明
+            }, 1000); // 3秒后变为半透明
+        }
+
+        // 鼠标移入和移出事件
+        audioContainer.addEventListener('mouseenter', showAudio);
+        audioContainer.addEventListener('mouseleave', hideAudio);
+
+        // 初始状态保持显示
+        hideAudio(); // 启动隐藏定时器
+    </script>    
+    </section>
+
+
+
+
+
+
+
+<!-- Service Section 服务部分  -->
+<section class="services" id="services">
+    <!--
+        Page title, 
+        consisting of multiple span elements, forming the word "services"
+     -->
+    <h1 class="heading">
+        <span>s</span>
+        <span>e</span>
+        <span>r</span>
+        <span>v</span>
+        <span>i</span>
+        <span>c</span>
+        <span>e</span>
+        <span>s</span>
+    </h1>
+
+    <!-- 
+    Three specific service parts,
+     each part is a button, click will jump to the corresponding page
+    -->
+    <div class="box-container">
+        <!-- Food and Drink Service button -->
+        <button class="box" style="margin-top: 2rem; cursor: pointer; background-color: #fff; "
+            onclick="window.location.href='FoodAndDrink.html'">
+            <i class="fas fa-utensils"></i>
+            <h3>美食饮品</h3>
+            <p>了解地方各种美味的菜肴和清爽的饮品</p>
+        </button>
+        <!-- Safety Guide Service button -->
+        <button class="box" style="margin-top: 2rem; cursor: pointer; background-color: #fff; "
+            onclick="window.location.href='Safety.html'">
+            <i class="fas fa-bullhorn"></i>
+            <h3>安全指南</h3>
+            <p>遵循安全指南，确保体验的安全与愉快</p>
+        </button>
+        <!-- Transportation mode Service button -->
+        <button class="box" style="margin-top: 2rem; cursor: pointer; background-color: #fff; "
+            onclick="window.location.href='Transports.html'">
+            <i class="fas fa-plane"></i>
+            <h3>交通方式</h3>
+            <p>使用推荐的交通方式，轻松快速旅行</p>
+        </button>
+
+    </div>
+</section>
+
+<!-- Album section -->
+<section class="gallery" id="gallery">
+    <!-- Page title, 
+     composed of multiple span elements, forming the word "gallery" -->
+    <h1 class="heading">
+        <span>g</span>
+        <span>a</span>
+        <span>l</span>
+        <span>l</span>
+        <span>e</span>
+        <span>r</span>
+        <span>y</span>
+    </h1>
+    <!-- Picture container, containing multiple small picture containers -->
+    <div class="box-container">
+        <!-- A single picture box with pictures, descriptions and links -->
+        <div class="box">
+            <img src="TenWangGe.jpg" alt="">
+            <div class="content">
+                <h3>滕王阁</h3>
+                <p>江西 南昌</p>
+                <a href="TenWangGe.html" class="btn">查看更多</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="QiLou.jpg" alt="">
+            <div class="content">
+                <h3>骑楼老街</h3>
+                <p>海南 海口</p>
+                <a href="QiLou.html" class="btn">查看更多</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="DaLiGuCheng.jpg" alt="">
+            <div class="content">
+                <h3>大理古城</h3>
+                <p>云南 大理</p>
+                <a href="DaLiGuCheng.html" class="btn">查看更多</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="XiHu.jpg" alt="">
+            <div class="content">
+                <h3>西湖</h3>
+                <p>浙江 杭州</p>
+                <a href="XiHu.html" class="btn">查看更多</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="LongMenShiKu.jpg" alt="">
+            <div class="content">
+                <h3>龙门石窟</h3>
+                <p>河南 洛阳</p>
+                <a href="LongMenShiKu.html" class="btn">查看更多</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="JuZhiZou.jpg" alt="">
+            <div class="content">
+                <h3>橘子洲</h3>
+                <p>湖南 长沙</p>
+                <a href="JuZhiZou.html" class="btn">查看更多</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="ZhuoZhengYuan.jpg" alt="">
+            <div class="content">
+                <h3>拙政园</h3>
+                <p>江苏 苏州</p>
+                <a href="ZhuoZhengYuan.html" class="btn">查看更多</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="PandaBase.jpg" alt="">
+            <div class="content">
+                <h3>大熊猫繁育研究基地</h3>
+                <p>四川 成都</p>
+                <a href="PandaBase.html" class="btn">查看更多</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="GuiZhouMiaoVillage.jpg" alt="">
+            <div class="content">
+                <h3>千户苗寨</h3>
+                <p>贵州 黔东南苗族侗族自治州</p>
+                <a href="GuiZhouMiaoVillage.html" class="btn">查看更多</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+    <!-- 套餐部分 -->
+    
+    <section class="packages" id="packages">
+
+        <h1 class="heading">
+            <span>p</span>
+            <span>a</span>
+            <span>c</span>
+            <span>k</span>
+            <span>a</span>
+            <span>g</span>
+            <span>e</span>
+            <span>s</span>
+        </h1>
+    
+        <div class="box-container">
+    
+            <div class="box">
+                <img src="nanchang1.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> 南昌 </h3>
+                    <p>Explore Nanchang, Jiangxi Province,
+                        a fantastic city where the ancient and the real are intertwined,
+                         as if turning over a thick ancient scroll of history</p>
+                         <p>探索江西南昌,这座古老与现实交织的梦幻之城,仿佛翻开了一部厚重的历史画卷</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price"> $90.00 <span>$120.00</span> </div>
+                    <a href="booking_nanchang.html" class="btn btn-warning">立即 预订</a>
+                </div>
+            </div>
+    
+    
+            <div class="box">
+                <img src="haikou2.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> 海口 </h3>
+                    <p>The coconut breeze in Haikou carries the smell of the sea</p>
+                    <br><br>
+                    <p>海口的椰风带着海的味道</p>
+                    <br>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price"> $100.00 <span>$130.00</span> </div>
+                    <a href="booking_haikou.html" class="btn btn-warning">立即 预订</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <img src="dali1.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> 大理 </h3>
+                    <p>Under the Cangshan Mountain, beside the Erhai Sea, in the company of good friends, to see the beauty of the world</p>
+                    <br> 
+                    <p>   苍山下，洱海旁，好友相伴，看尽人间美景</p>
+                    <br>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price"> $110.00 <span>$150.00</span> </div>
+                    <a href="booking_dali.html" class="btn btn-warning">立即 预订</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <img src="hangzhou1.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> 杭州 </h3>
+                    <p>Strolling through the streets and alleys of Hangzhou is like being in an ink painting.</p>
+                    <br><br>
+                    <p>漫步在杭州的街头巷尾，仿佛置身于一幅水墨画中</p>
+                    <br>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price"> $100.00 <span>$160.00</span> </div>
+                    <a href="booking_hangzhou.html" class="btn btn-warning">立即 预订</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <img src="luoyang1.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> 洛阳 </h3>
+                    <p>Feel the charm of the thousand-year-old capital and let your mind swim in the long river of history</p>  
+                    <br>
+                    <p>  感受千年古都的魅力，让心灵在历史的长河中遨游</p>
+                    <br>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price"> $130.00 <span>$170.00</span> </div>
+                    <a href="booking_luoyang.html" class="btn btn-warning">立即 预订</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <img src="changsha1.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> 长沙 </h3>
+                    <p>Whether it's mountains, rivers, lakes and seas, or ancient cities and towns, all of them can make you feel a different Hunan flavor</p>
+                    <br>
+                    <p>   无论是山川湖海，还是古城古镇，都能让你感受到不一样的湖南风情
+                    </p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price"> $80.00 <span>$110.00</span> </div>
+                    <a href="booking_changsha.html" class="btn btn-warning">立即 预订</a>
+                </div>
+            </div>
+    
+            <div class="box">
+                <img src="suzhou1.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> 苏州 </h3>
+                    <p>Go to Suzhou to fulfill all your fantasies about the water towns of the South China Sea.</p>
+                    <br><br>
+                    <p>到苏州可以满足你对江南水乡的所有幻想</p>
+                    <br>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price"> $120.00 <span>$150.00</span> </div>
+                    <a href="booking_suzhou.html" class="btn btn-warning">立即 预订</a>
+                </div>
+            </div>
+    
+    
+            <div class="box">
+                <img src="chengdu1.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> 成都 </h3>
+                    <p>Blow the evening breeze of Dujiangyan, see the pandas, and feel the ancient charm of Ba Shu Land</p>
+                    <br>
+                    <p>吹吹都江堰的晚风，看看大熊猫，感受巴蜀大地的古韵风情</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price"> $90.00 <span>$120.00</span> </div>
+                    <a href="booking_chengdu.html" class="btn btn-warning ">立即 预订</a>
+                </div>
+            </div>
+    
+    
+    
+            <div class="box">
+                <img src="guiyang1.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> 贵阳 </h3>
+                    <p>Walking along the streets of Guiyang, the classic cuisine flows in a smoky atmosphere</p>
+                    <br><br>
+                    <p>沿着贵阳的街巷行走，经典的美食在烟火气息中流淌</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price"> $99.99 <span>$108.00</span> </div>
+                    <a href="booking_guiyang.html" class="btn btn-warning">立即 预订</a>
+                </div>
+            </div>
+    
+    
+    
+        </div>
+        </div>
+    
+    </section>
+    <script src="./script.js"></script>
+
+
+
+
+
+
+
+    <!-- 底部 -->
+    <section class="footer" id="contact">
+        <div class="box-container">
+    
+            <div class="box">
+                <h3>关于我们</h3>
+                <p>我们是Web小分队，挚爱于旅游，致力于分享</p>
+                <p>We are the Web team, love to travel, dedicated to sharing.</p>
+                <p>身体和灵魂，总有一个在路上</p>
+                <p>Body and soul, there is always one on the way.</p>
+                <a href="AboutUs.html">查看更多</a>
+            </div>
+            
+           
+            
+            <div class="box">
+                <h3>联系我们</h3>
+                <p>欢迎来到旅游网。</p>
+                <p>关于旅游网的使用问题、改进建议，或举报不良信息，请点击下方联系我们。</p>
+                <p>Welcome to the travel website.Regarding usage issues, improvement suggestions, or reporting negative information on the travel website, please click below to contact us.</p><br>
+                <a href="ContractUs.html">查看更多</a>
+                
+            </div>
+    
+        </div>
+    
+        <h1 class="credit"> created by <span> The Web Team</span> | all rights reserved! </h1>
+    
+        </section>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <style>
+h1{
+    text-align: center;
+    color: #9c3939;
+    text-decoration: double;
+    font-style: italic;
+    font-size: 50;
+}
+#a1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #0a0a0a;
+    font-size: medium;
+    text-align: left;
+}
+#a2{
+    font-weight: 300px;
+    color: rgb(8, 8, 8);
+    font-style: oblique;
+    text-align: center;
+    
+}
+
+
+/* Beautification section of the form*/
+.form{
+
+    width: 85%;
+    max-width: 600px;
+    /* max-height: 700px; */
+    background-color: rgba(255, 255, 255, .05);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000;
+    text-align: left;
+    font-family: "微软雅黑";
+    color: #fff;
+}
+
+#a3{
+    background-image: url(nanchang1.jpg);
+}
+
+
+
+   </style>
+</head>
+<body id="a3">
+    <div class="form" >
+    
+        
+            <fieldset>
+            
+
+            <h1>booking your trip</h1><br>
+           <!-- There you should write down your name -->
+            <lable id="a1">Name:</lable>
+            <input id="a2" type="text" placeholder="Enter your name">
+        
+            <br><br>
+            <!-- There you should write down the time you want to go-->
+            <lable id="a1"> When do you want to go:</lable>
+            <input id="a2" type="date" >
+            <br><br>
+            <!-- There you write down the time you want to leave -->
+            <lable id="a1"> When do you want to leave:</lable>
+            <input id="a2" type="date" >
+            <br><br>
+            <!-- There you write down your email,so we can send message on your email -->
+            <lable id="a1"> Email ID:</lable>
+            <input id="a2" type="email" placeholder="Enter your email">
+            <br><br>
+            <!-- There you can write down your phone number -->
+            <lable id="a1">Contact Number:</lable>
+            <input id="a2" type="text" placeholder="Enter your phone number">
+            <br><br>
+            <!-- There you can choose the food you like,so we can give you a better food choice -->
+            <lable id="a1">Select Food:</lable>
+            <input type="radio" name="r0" ><lable id="a1"> Vegeterian</lable>
+            <input type="radio" name="r0"><label id="a1">Non-Vegeterian</label>
+            <br><br>
+            <!-- There you choose your flavor,We will prepare your favorite dishes according to your taste. -->
+            <lable id="a1">Select flavor:</lable>
+            <input type="radio" name="r6" ><lable id="a1"> Sweet</lable>
+            <input type="radio" name="r6"><label id="a1">Spicy</label>
+            <input type="radio" name="r6"><label id="a1">Sort</label>
+            <input type="radio" name="r6"><label id="a1">Salty</label>
+            <br><br>
+
+            <!-- There is five Famous Tourist Attractions -->
+            <lable id="a1">Where do you want to go in nanchang:</lable><br>
+            <input id="a2" type="radio" name="r1"><label id="a2">骑楼老街--The Old Jockey Club Street</label><br>
+            <input id="a2" type="radio" name="r2"><label id="a2">海口钟楼--Haikou Bell Tower</label><br>
+            <input id="a2" type="radio" name="r3"><label id="a2">假日海滩--Holiday Beach</label><br>
+            <input id="a2" type="radio" name="r4"><label id="a2">万绿园--Wanlv Garden</label><br>
+            <input id="a2" type="radio" name="r5"><label id="a2">白沙门公园--Baishamen Park</label>
+            
+            <br><br>
+            <!-- There is the transportation you can chose-->
+               <label id="a1">Choose the transportation you like:</label>
+               <input id="a2" type="radio" name="r7"><label id="a2">fly</label>
+               <input id="a2" type="radio" name="r7"><label id="a2">train</label>
+               <input id="a2" type="radio" name="r7"><label id="a2">car</label>
+               <br><br>
+
+            <!-- Here you can write down your other reqirements -->
+               <label id="a1">备注(Remarks):</label>
+               <br><br>
+               <textarea name="reasons" id="a2" cols="35" rows="6" placeholder="You can write down your other requirements here."></textarea>
+               <br><br>
+            <!-- After the writing ,you can click the submit button,if success,it will show "Your booking has been successful!" -->  
+               <button onclick="submitForm()">submit</button>
+                <script>
+                function submitForm(){
+
+                    alert("Your booking has been successful!");
+                }
+               </script>
+
+               <input type="reset"  value="clear">
+
+
+              
+            </fieldset>
+            
+    </div>
+</body>
+</html>

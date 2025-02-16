@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+ 
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Book Your Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="a3">
+   <div class="form">
+      <form action="/submit-form" method="POST" id="paymentForm">
+         <!-- Your form inputs here -->
+         <fieldset>
+            <h1><h1> Booking Your Trip</h1>   </h1><br>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Enter your name"><br><br>
+
+            <label for="dog">When do you want to go:</label>
+            <input type="date" id="dog" name="dog"><br><br>
+
+            <label for="dol">When do you want to leave:</label>
+            <input id="dol" name="dol" type="date"><br><br>
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+
+            <label for="contact">Contact Number:</label>
+            <input id="contact" name="contact" type="text" placeholder="Enter your phone number"><br><br>
+
+            <label for="Select">Select Food:</label>
+            <input id="Select" type="radio" name="Select" value="Vegetarian"><label for="Select"> Vegetarian</label>
+            <input id="Select" type="radio" name="Select" value="Non-Vegetarian"><label for="Select">Non-Vegetarian</label><br><br>
+
+            <label for="flavor">Select flavor:</label>
+            <input id="flavor" type="radio" name="flavor" value="Sweet"><label for="flavor"> Sweet</label>
+            <input id="flavor" type="radio" name="flavor" value="Spicy"><label for="flavor">Spicy</label>
+            <input id="flavor" type="radio" name="flavor" value="Sour"><label for="flavor">Sour</label>
+            <input id="flavor" type="radio" name="flavor" value="Salty"><label for="flavor">Salty</label><br><br>
+
+            <label for="place">Where do you want to go in Nanchang:</label><br>
+            <input id="place" type="checkbox" name="place" value="Longmen Grottoes"><label for="place">龙门石窟--Longmen Grottoes</label><br>
+            <input id="place" type="checkbox" name="place" value="Laojunshan Mountain"><label id="place">老君山--Laojunshan Mountain</label><br>
+            <input id="place" type="checkbox" name="place" value="Baima Temple"><label id="place">白马寺--Baima Temple</label><br>
+            <input id="place" type="checkbox" name="place" value="Luoyi Ancient City"><label id="place">洛邑古城--Luoyi Ancient City</label><br>
+            <input id="place" type="checkbox" name="place" value="Luoyang Museum"><label id="place">洛阳博物馆--Luoyang Museum</label><br><br>
+
+            <label for="transportation">Choose the transportation you like:</label>
+            <input id="transportation" type="radio" name="transportation" value="Fly"><label for="transportation">Fly</label>
+            <input id="transportation" type="radio" name="transportation" value="Train"><label for="transportation">Train</label>
+            <input id="transportation" type="radio" name="transportation" value="Car"><label for="transportation">Car</label><br><br>
+
+            <label for="Remarks">备注(Remarks):</label><br><br>
+            <textarea name="Remarks" id="Remarks" cols="35" rows="6" placeholder="You can write down your other requirements here."></textarea><br><br>
+
+            <button type="submit">Submit</button>
+            <input type="reset" value="Clear">
+            <a href="homePage.html">Back to home page</a>
+         </fieldset>
+      </form>
+   </div>
+</body>
+</html>
